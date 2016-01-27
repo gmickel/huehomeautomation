@@ -1,0 +1,48 @@
+{
+  "name": "arduino-motion-and-light-detector",
+  "version": "0.2.0",
+  "description": "Homeautomation mit Philips’ Hue, Arduino & Raspberry Pi",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmickel/huehomeautomation"
+  },
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "./node_modules/.bin/mocha --opts .mocha.opts test",
+    "compile": "babel -d lib/ src/",
+    "compileDev": "babel --presets es2015 -d lib/ src/ --source-maps true",
+    "fix": "eslint --fix -c ./.eslintrc src test",
+    "lint": "eslint -c ./.eslintrc src test",
+    "prepublish": "npm run compile",
+    "preversion": "npm run compile",
+    "watch": "babel --presets es2015 -d lib/ src/ --watch --source-maps true",
+    "package:check": "./node_modules/.bin/ncu",
+    "package:upgrade": "./node_modules/.bin/ncu -u",
+    "pre-commit": [
+      "test"
+    ]
+  },
+  "author": "Gordon Mickel <gordon.mickel@gmail.com>",
+  "contributors": "Daniel Killenberger <daniel.killenberger@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "hugh": "^0.4.0",
+    "johnny-five": "^0.9.18",
+    "moment": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
+    "eslint-plugin-react": "^3.11.3",
+    "jscs": "^2.7.0",
+    "mocha": "^2.3.4",
+    "npm-check-updates": "^2.5.5"
+  }
+}
